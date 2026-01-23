@@ -1,0 +1,15 @@
+#RECURSION:
+def revarr(arr, left,right):
+    
+    if left >= right:
+        return
+    
+    arr[left],arr[right] = arr[right],arr[left]
+    revarr(arr, left+1, right-1)
+
+arr = [1,2,3,4,5]
+revarr(arr, 0, len(arr)-1)
+print(arr)
+
+#Time Complexity: O(N/2) ~ O(N)
+#Space Complexity: O(N/2) ~ O(N) --> Stack space
